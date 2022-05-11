@@ -4,8 +4,8 @@ from Integrantes import integrantes
 class Man_In():
     __dimension=0
     __cantidad=0
-    __incremento=11
-    def __init__(self,dimension,incremento=11):
+    __incremento=1
+    def __init__(self,dimension,incremento=1):
         self.__integrantes= np.empty(dimension,dtype=integrantes)
         self.__dimension=dimension
         self.__cantidad=0
@@ -18,9 +18,13 @@ class Man_In():
                 band=True
             else:
                 if(self.__cantidad==self.__dimension):
-                    self.__integrantes+=self.__incremento
+                    self.__dimension+=self.__incremento
                     self.__integrantes.resize(self.__dimension)
-                    unintegrante=integrantes(Fila[0],Fila[1],Fila[2],Fila[3],Fila[4])
-                    self.__integrantes[self.__cantidad]=unintegrante
+                unintegrante=integrantes(Fila[0],Fila[1],Fila[2],Fila[3],Fila[4])
+                self.__integrantes[self.__cantidad]=unintegrante
+                self.__cantidad+=1
         archivo.close()
+    def dimension(self):
+        return(self.__dimension)
+
 
