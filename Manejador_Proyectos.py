@@ -40,14 +40,14 @@ class ManPro():
             for j in range(len(arr)):
                 if self.__indice[i].id()==arr[j].id():
                     cant=cant+1
-                if (arr[j].rol()=='director'):
-                    Director=True
-                    if (arr[j].categoria())=='I' or (arr[j].categoria())=='II':
-                        DirectorIoII=True
-                elif (arr[j].rol()=='codirector'):
-                    Codirector=True
-                    if (arr[j].categoria()=='I') or (arr[j].categoria()=='II') or (arr[j].categoria()=='III'):
-                        CodirectorI_IIoIII=True
+                    if (arr[j].rol()=='director'):
+                        Director=True
+                        if (arr[j].categoria())=='I' or (arr[j].categoria())=='II'or (arr[j].categoria())=='III'or (arr[j].categoria())=='IV':
+                            DirectorIoII=True
+                    elif (arr[j].rol()=='codirector'):
+                        Codirector=True
+                        if (arr[j].categoria()=='I') or (arr[j].categoria()=='II') or (arr[j].categoria()=='III')or (arr[j].categoria()=='IV'):
+                            CodirectorI_IIoIII=True
             self.__indice[i].obtener_puntaje(cant,Director,DirectorIoII,Codirector,CodirectorI_IIoIII)
 
     def lista(self):

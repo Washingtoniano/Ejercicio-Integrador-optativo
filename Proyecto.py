@@ -18,23 +18,23 @@ class proyecto():
             puntos=puntos+10
         else:
             puntos=puntos-20
-            print ("El proyecto debe tener como minimo 3 integrantes\n")
+            print ("El proyecto",self.__ide,"debe tener como minimo 3 integrantes\n")
         if Director==True:
             if (CategoriaDIR==True):
                 puntos=puntos+10
             else:
                 puntos=puntos-5
-                print ("El Director del Proyecto debe tener categoría I o II")
+                print ("El Director del Proyecto",self.__ide, "debe tener categoría I o II\n")
         else:
-                print ("El proyecto debe tener un director\n")
+                print ("El proyecto",self.__ide,"debe tener un director\n")
         if Codirector==True:
             if(CategoriaCO==True):
                 puntos=puntos+10
             else:
                 puntos =puntos-5
-                print ("El Codirector del Proyecto debe tener como mínimo categoría III")
+                print ("El Codirector del Proyecto",self.__ide, "debe tener como mínimo categoría III\n")
         else:
-            print ("El proyecto debe tener un codirector\n")
+            print ("El proyecto",self.__ide, "debe tener un codirector\n")
         if (Codirector==False and Director==False):
             puntos=puntos-10
         self.__puntaje=self.__puntaje+puntos
