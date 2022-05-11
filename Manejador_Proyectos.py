@@ -1,5 +1,6 @@
 import csv
 from Proyecto import proyecto
+from Manejador_Integrantes import Man_In
 class ManPro():
     __indice=[]
     def __init__(self):
@@ -31,35 +32,6 @@ class ManPro():
                     aux=elemento
                     elemento=elemento2
                     elemento2=aux
-    def puntaje(self,integrantes,Director,CategoriaDIR,Codirector,CategoriaCO):
-        for proyecto in self.__indice:
-            puntos=0
-            if integrantes>=3:
-                puntos=puntos+10
-            else:
-                puntos=puntos-20
-                print ("El proyecto debe tener como minimo 3 integrantes\n")
-            if Director==True:
-                if (CategoriaDIR==True):
-                    puntos=puntos+10
-                else:
-                    puntos=puntos-5
-                    print ("El Director del Proyecto debe tener categoría I o II")
-            else:
 
-                print ("El proyecto debe tener un director\n")
-            if Codirector==True:
-                if(CategoriaCO==True):
-                    puntos=puntos+10
-                else:
-                    puntos =puntos-5
-                print ("El Codirector del Proyecto debe tener como mínimo categoría III")
-            else:
-                print ("El proyecto debe tener un codirector\n")
-            if (Codirector==False and Director==False):
-                puntos=puntos-10
-
-
-
-
-
+    def lista(self):
+        return self.__indice

@@ -5,26 +5,27 @@ if __name__ == '__main__':
     maneP=ManPro()
     maneP.leer()
     maneI.leer()
-    can=maneP.mostrar()
-    for i in range (len( maneP)):
+    li=maneP.lista()
+    arr=maneI.dimension()
+    for i in range (len(li)):
         cant=0
         DirectorIoII=False
         Director=False
         Codirector=False
         CodirectorI_IIoIII=False
-        for Integra in maneI:
-            if maneP[i].id()==Integra.id():
+        for j in range(len(arr)):
+            if li[i].id()==arr[j].id():
                 cant=cant+1
-            if (Integra.rol()=='director'):
+            if (arr[j].rol()=='director'):
                 Director=True
-                if (Integra.categoria())=='I' or (Integra.categoria())=='II':
+                if (arr[j].categoria())=='I' or (arr[j].categoria())=='II':
                     DirectorIoII=True
-            elif (Integra.rol()=='codirector'):
+            elif (arr[j].rol()=='codirector'):
                 Codirector=True
-                if (Integra.categoria()=='I') or (Integra.categoria()=='II') or (Integra.categoria()=='III'):
+                if (arr[j].categoria()=='I') or (arr[j].categoria()=='II') or (arr[j].categoria()=='III'):
                     CodirectorI_IIoIII=True
-        maneP[i].puntaje(cant,Director,DirectorIoII,Codirector,CodirectorI_IIoIII)
-
-
+        li[i].obtener_puntaje(cant,Director,DirectorIoII,Codirector,CodirectorI_IIoIII)
+    maneI.mostrar()
+    maneP.mostrar()
 
 
