@@ -17,12 +17,10 @@ class ManPro():
                 self.__indice.append(unproyecto)
         archivo.close()
     def mostrar(self):
-        self.ordenar()
-        ca=0
+        self.lista()
         for Proyecto in self.__indice:
-            ca=ca+1
+
             print(Proyecto)
-        return ca
     def ordenar(self):
         self.__indice.sort()
     def listar(self):
@@ -32,6 +30,25 @@ class ManPro():
                     aux=elemento
                     elemento=elemento2
                     elemento2=aux
+    def comprobar(self,arr):
+        for i in range (len(self.__indice)):
+            cant=0
+            DirectorIoII=False
+            Director=False
+            Codirector=False
+            CodirectorI_IIoIII=False
+            for j in range(len(arr)):
+                if self.__indice[i].id()==arr[j].id():
+                    cant=cant+1
+                if (arr[j].rol()=='director'):
+                    Director=True
+                    if (arr[j].categoria())=='I' or (arr[j].categoria())=='II':
+                        DirectorIoII=True
+                elif (arr[j].rol()=='codirector'):
+                    Codirector=True
+                    if (arr[j].categoria()=='I') or (arr[j].categoria()=='II') or (arr[j].categoria()=='III'):
+                        CodirectorI_IIoIII=True
+            self.__indice[i].obtener_puntaje(cant,Director,DirectorIoII,Codirector,CodirectorI_IIoIII)
 
     def lista(self):
         return self.__indice
